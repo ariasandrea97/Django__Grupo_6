@@ -1,0 +1,25 @@
+{% extends 'Viajeros/base/base.html' %}
+{% load static %}
+
+{% block titulo %}Viajeros{% endblock %}
+
+{% block encabezado %}
+
+
+
+{% endblock %}
+
+{% block contenido %}
+<h1>Circuito Turistico</h1>
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" src="{% static 'Viajeros/img/Atuel_Travel.jpg' %}" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">CAÑON DEL ATUEL</h4>
+      <p class="card-text">Salidas: Jueves y Domingos. Horario: de 07.00 hs. a 21.00 hs.</p>
+      <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+    </div>
+</div>
+
+
+{% endblock %}

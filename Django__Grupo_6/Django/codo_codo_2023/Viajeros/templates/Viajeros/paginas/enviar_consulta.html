@@ -1,0 +1,27 @@
+{% extends 'Viajeros/base/base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+  <!--   <link rel="stylesheet" href="{% static 'aula_virtual/css/alta_alumno.css' %}">   -->
+{% endblock %}
+
+{% block titulo %}Formulario{% endblock %}
+
+{% block encabezado %}
+
+{% endblock %}
+
+{% block contenido %}
+<h1>Envianos tu consulta</h1>
+<h2>Nos pondremos en contacto a la brevedad</h2>
+
+
+
+<form action="{% url 'enviar_consulta' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="ENVIAR RESERVA">
+</form>
+
+{% endblock %}

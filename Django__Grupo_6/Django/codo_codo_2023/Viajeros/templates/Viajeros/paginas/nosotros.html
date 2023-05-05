@@ -1,0 +1,60 @@
+{% extends 'Viajeros/base/base.html' %}
+{% load static %}
+
+{% block contenido %}
+    
+ <!-- <p>Bienvenid@ <b>  {{first_name}} {{last_name}}</b></p> -->
+<!-- <div class="container"> -->
+    <div class="imagen">
+      <p align="center"><img src="{%static 'Viajeros/img/rafting.jpg' %}" alt="logo" >
+      </p>
+    </div>
+  <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+    
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{%static 'Viajeros/img/rafting.jpg' %}" alt="First slide">
+      </div>
+
+      <div class="carousel-item">
+        <img class="d-block w-100" src=" {%static 'Viajeros/img/SanRafael' %}" alt="Second slide">
+      </div>
+      
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{%static 'Viajeros/img/Reyunos_Dique.jpg'}" alt="Third slide">
+      </div>
+  </div> -->
+<!-- </div>       -->
+
+
+
+<div class="container">
+
+   <h1>SOBRE VIAJEROS </h1>
+
+   <p>Viajeros es una web especializada en ofrecerte excursiones en la pcia de Mendoza.
+    Nos diferenciamos del resto de las agencias de Turismo recepctivo on line porq contamos con oficina, 
+    fisica y telefonos de guardia las 24hs.
+   </p>
+
+   <p> Diseñamos excursiones y viajes exclusivos para aquellos que desean conocer el mundo a partir de la conexión
+     única con el lugar que visitan. Nuestro equipo de jóvenes profesionales trabaja para crear itinerarios con
+     servicios a la medida de cada viajero. Es que amamos Mendoza y queremos que se lleven lo mejor que tenemos: montaña, vinos, aventura, relax y diversión. 
+   </p>
+
+
+      
+   <p> El personal que compone nuestro staff reside en la provincia por lo
+       que no ofrecemos conocer la misma de la mano de un profesional
+       de turismo "local", con extensa experiencia y sino que además son
+       graduados en la materia y cuentan con todas las certificaciones y
+       autorizaciones necesarias.
+   </p>      
+     
+   <p>  Si queres que tu viaje sea inolvidable escribinos.</p>    
+
+</div>
+    <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Consulta</a>
+
+{% endblock %}
+

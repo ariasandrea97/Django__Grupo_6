@@ -1,0 +1,27 @@
+{% extends 'Viajeros/base/base.html' %}
+{% load static %}
+
+{% block titulo %}Viajeros{% endblock %}
+
+{% block encabezado %}
+
+
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Alojamiento</h1>
+<!-- <p>Bienvenid@ <b>  {{first_name}} {{last_name}}</b></p> -->
+
+
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="{% static 'Viajeros/img/hotel_mendoza.jpg' %}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">HOTEL MENDOZA</h4>
+          <p class="card-text">Dirección: Av España 1210 – Mendoza, Argentina. Hotel Mendoza, se ubica en pleno centro de Mendoza, a una cuadra de la avenida Peatonal</p>
+          <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+        </div>
+    </div>
+
+
+{% endblock %}

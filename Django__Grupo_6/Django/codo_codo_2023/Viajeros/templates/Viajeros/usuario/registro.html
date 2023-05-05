@@ -1,0 +1,22 @@
+{% extends 'Viajeros/base/base.html' %}
+{% load static %}
+
+{% block titulo %}Viajeros{% endblock %}
+
+{% block encabezado %}
+
+
+{% endblock %}
+
+{% block contenido %}
+<h1>Formulario de alta</h1>
+
+
+<form action="{% url 'registro' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" class="btn btn-primary" value="Registrarse ">
+</form>
+
+{% endblock %}

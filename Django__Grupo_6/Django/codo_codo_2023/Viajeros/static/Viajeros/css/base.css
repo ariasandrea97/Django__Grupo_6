@@ -1,0 +1,19 @@
+/* body {
+    background-color: lightgray;
+} */
+
+.header {
+   /* background: url(../img/bg-header.jpeg) no-repeat center; */
+    background-size: cover;
+    min-height: 100vh;
+  }
+/* 
+.carousel > .item > img{
+    width:640px;
+    height:360px;
+}  
+
+.carousel {
+    width:640px;
+    height:360px;
+  } */

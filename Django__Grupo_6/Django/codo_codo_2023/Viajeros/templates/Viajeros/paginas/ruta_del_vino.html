@@ -1,0 +1,32 @@
+{% extends 'Viajeros/base/base.html' %}
+{% load static %}
+
+{% block titulo %}Viajeros{% endblock %}
+
+{% block encabezado %}
+
+
+{% endblock %}
+
+{% block contenido %}
+<h1>Caminos del vino </h1>
+<!-- <p>Bienvenid@ <b>  {{first_name}} {{last_name}}</b></p> -->
+<div >
+    <p align="left"><img src="{% static 'Viajeros/img/caminos_del_vino3.jpg' %}" alt="caminos_del_vino3" width="40%">
+    </p>
+</div>
+
+
+<h2>INFORMACIÓN</h2> 
+<p>   «El vino siembra poesía en los corazones.» 
+    <br> <br>
+    Tarifa por persona $ 5800.
+    <br>
+    Mendoza es una de las capitales mundiales del vino. Para quién visita esta provincia es un placentero deber, el conocer el proceso de producción y elaboración de nuestros vinos.
+    <br>
+    El paseo consta de visita a 3 Bodegas, las cuales serán seleccionadas según diagramación y disponibilidad de las mismas.
+    <br>
+    INCLUYE: Entradas, servicio de guìa y degustaciones.-</p>
+    <br>
+    <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+{% endblock %}

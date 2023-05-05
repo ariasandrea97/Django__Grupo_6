@@ -1,0 +1,83 @@
+
+/* cambiar tipo de letra */
+/* nav.navbar ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(255, 255, 255); 
+    font-size: 15px; 
+} */
+ 
+/* cambiar el color de fondo a la barra */
+/* nav.navbar {
+    background-color: #CC1414;
+} */
+
+/* nav-item {
+    
+    margin-left: 0px;
+    background-color: rgb(168, 82, 248);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+
+} */
+
+/* html {
+    font-size: 62.5%;
+    box-sizing: border-box; 
+    scroll-snap-type: y mandatory;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    background: #dbd3d3;
+    margin: auto;
+} */
+/************ Navegacion Principal *****************/
+/* 
+.nav-bg {
+    background-color: rgb(196, 49, 49);
+    place-content: flex-start;
+
+}
+.navbar{
+     display: inline;
+     display: flex;
+
+     align-items: center;
+     justify-content: space-between;
+     background-color:  fcfcfc; 
+     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
+
+}
+/* .navbar a {
+    display: block;
+    text-align:center;
+    color: rgb(255, 255, 255); 
+    text-decoration: none;
+    font-size: 20px; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 20%;
+    font-weight:100;
+    padding: 1rem;
+}
+ .navbar a:hover {
+    background-color: rgb(114, 191, 241); 
+    color: black;  
+}   
+/* .navbar span{
+    font-size: 15px;
+} */
+/* .navbar h1{
+    font-size:30px;
+    color: rgb(255, 255, 255);
+    text-decoration: none; 
+} */
+/* .navbar i{ 
+    color: rgb(255, 255, 255);
+  } */
