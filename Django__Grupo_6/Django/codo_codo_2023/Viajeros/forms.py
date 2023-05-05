@@ -41,24 +41,24 @@ TYPE_RESERVA = [
     ("Otros", "Otros"),
 ]
 
-class AltaPersonaForm(forms.Form):
-  #  nombre = forms.CharField(label="Nombre ",widget=forms.TextInput(attrs={'class': 'nombre_alumno rojo'}), required=True)
-    nombre = forms.CharField(label="Nombre ",widget=forms.TextInput(), required=True)
-    apellido = forms.CharField(label="Apellido ", required=True)
-    mail = forms.EmailField(label="Mail", required=True)
-    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirma Contraseña', widget=forms.PasswordInput)
-    # contraseña = forms.CharField(label="Password", required=True)
-    #contraseña2 = forms.PasswordInput(label="Confirme Password")
-    #validar contraseña
-    def clean_mail(self):
-    # Validación del campo Mail
+# class AltaPersonaForm(forms.Form):
+#   #  nombre = forms.CharField(label="Nombre ",widget=forms.TextInput(attrs={'class': 'nombre_alumno rojo'}), required=True)
+#     nombre = forms.CharField(label="Nombre ",widget=forms.TextInput(), required=True)
+#     apellido = forms.CharField(label="Apellido ", required=True)
+#     mail = forms.EmailField(label="Mail", required=True)
+#     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+#     password2 = forms.CharField(label='Confirma Contraseña', widget=forms.PasswordInput)
+#     # contraseña = forms.CharField(label="Password", required=True)
+#     #contraseña2 = forms.PasswordInput(label="Confirme Password")
+#     #validar contraseña
+#     def clean_mail(self):
+#     # Validación del campo Mail
 
-        data = self.cleaned_data["mail"]
-        # if True:
-        #     raise ValidationError("El mail utilizado ya existe")
+#         data = self.cleaned_data["mail"]
+#         # if True:
+#         #     raise ValidationError("El mail utilizado ya existe")
 
-        return data
+#         return data
 
 class EnviarConsultaForm(forms.Form):
         nombre = forms.CharField(label="Nombre ",widget=forms.TextInput(), required=True)
@@ -118,19 +118,19 @@ class EnviarConsultaForm(forms.Form):
 
 
 
-class InicioSesionForm(forms.Form):
-    mail = forms.EmailField(label="Mail", required=True)
-    # contraseña = forms.CharField(label="Password", required=True)
-    contraseña = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+# class InicioSesionForm(forms.Form):
+#     mail = forms.EmailField(label="Mail", required=True)
+#     # contraseña = forms.CharField(label="Password", required=True)
+#     contraseña = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
 
-    def clean_mail(self):
-    # Validación del campo Mail
+#     def clean_mail(self):
+#     # Validación del campo Mail
 
-        data = self.cleaned_data["mail"]
-        # if True:
-        #     raise ValidationError("El mail utilizado ya existe")
+#         data = self.cleaned_data["mail"]
+#         # if True:
+#         #     raise ValidationError("El mail utilizado ya existe")
 
-        return data
+#         return data
 
 
 
