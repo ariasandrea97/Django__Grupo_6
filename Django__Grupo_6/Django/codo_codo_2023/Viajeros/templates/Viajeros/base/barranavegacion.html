@@ -30,6 +30,7 @@
           <!-- <a class="navbar-brand" href="#">
             <img src="{% static 'Viajeros/img/viajeros.png' %}" alt="logo" width="35" heigth="35" >
           </a> -->
+          <img src="{% static 'Viajeros/img/viajeros.png' %}" alt="logo" width="100" > 
          <!-- Boton Menu-->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,8 +49,7 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="{% url 'circuito_turistico' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Circuito_Turistico 
-                </a>
+                  Circuito_Turistico </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{% url 'circuito_turistico' %}">San Rafael</a></li>
                     <li><a class="dropdown-item" href="{% url 'ruta_del_vino' %}">Ruta del Vino</a></li>
@@ -62,10 +62,17 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="{% url 'index' %}"> Inicio</a></li>
+              <li ><a href="{% url 'index' %}"> <i class="fa-solid fa-house-chimney"></i> Inicio</a></li>
 
               {% if user.is_authenticated %}
-                <li><a href="/user"> <span class="glyphicon glyphicon-user"></span> {{user.username}}</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/user" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    <span class="glyphicon glyphicon-user"></span> {{user.username}}</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
+                    <li><a class="dropdown-item" href="#">Consultar reservas</a></li>
+                  </ul>   
+                </li>
                 <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
               {% else %}
                 <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

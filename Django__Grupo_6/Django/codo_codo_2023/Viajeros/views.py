@@ -8,15 +8,12 @@ from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 
-# from .models import *
-# from .forms import UserRegisterForm, PostForm
-# from django.contrib.auth.models import User
-# from django.contrib.auth.decorators import login_required
-
 
 
 #Definicion de los formularios:
-from .forms import AltaPersonaForm, EnviarConsultaForm, InicioSesionForm
+from .forms import EnviarConsultaForm
+
+
 
 def index(request):
     # Hagamos de cuenta que este dato viene de la BBDD

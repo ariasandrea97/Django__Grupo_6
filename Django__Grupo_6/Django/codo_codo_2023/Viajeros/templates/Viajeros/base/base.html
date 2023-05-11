@@ -19,33 +19,15 @@
       <!-- Iconos Footer : -->
       <script src="https://kit.fontawesome.com/56fa4f962e.js" crossorigin="anonymous"></script>
 
-     
-    <!-- Para barra navegacion: -->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-       <style>
-        /* Este es para los elementos en general */
-        .navbar-light .navbar-nav .nav-link {
-        color: orange;
-        }
-        /*  Este es para el elemento activo lo puedes omitir si asi deseas */
-        .navbar-light .navbar-nav .active>.nav-link  {
-        color: red;
-        }
-        </style>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      -->
 </head>
 
 
 <body>
     <header>
-        {% block encabezado %}
-
+        {% block encabezado %} 
         {% endblock %}
 
-        <img src="{% static 'Viajeros/img/viajeros.png' %}" alt="logo" width="100" >
         {% include 'Viajeros/base/barranavegacion.html' %}
 
         <!-- Mensajes  -->
@@ -64,10 +46,9 @@
 
     <main>
        
-        <!-- <div class="container"  >
-            <br> -->
+    <div class="container"  >
             {% block contenido %} {% endblock %}
-        <!-- </div> -->
+    </div> 
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>

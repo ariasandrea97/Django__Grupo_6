@@ -2,18 +2,38 @@
     background-color: lightgray;
 } */
 
-.header {
-   /* background: url(../img/bg-header.jpeg) no-repeat center; */
-    background-size: cover;
-    min-height: 100vh;
-  }
 /* 
-.carousel > .item > img{
-    width:640px;
-    height:360px;
-}  
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; 
+  scroll-snap-type: y mandatory;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.carousel {
-    width:640px;
-    height:360px;
-  } */
+body {
+  font-size: 16px; 
+  font-family: 'Krub', sans-serif;
+  background: #dbd3d3;
+  margin: auto;
+}
+
+img{
+    float:left;
+    max-width: 100%;
+  }
+header{
+    height:155px;
+    background-color:#74abdf;
+    padding:45px 0 0 30px;
+   
+      
+  }
+header h2 {
+    font-size:60px; 
+    color: #210561;
+    font-family:Georgia, 'Times New Roman', Times, serif;   
+} */
