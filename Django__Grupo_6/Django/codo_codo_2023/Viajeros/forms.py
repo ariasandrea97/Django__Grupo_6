@@ -42,7 +42,6 @@ TYPE_RESERVA = [
 ]
 
 
-
 class EnviarConsultaForm(forms.Form):
         nombre = forms.CharField(label="Nombre ",widget=forms.TextInput(), required=True)
         apellido = forms.CharField(label="Apellido ", required=True)
@@ -98,8 +97,6 @@ class EnviarConsultaForm(forms.Form):
             # Always return a value to use as the new cleaned data, even if
             # this method didn't change it.
             return data
-
-
 
 
 
