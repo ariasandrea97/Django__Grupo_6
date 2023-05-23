@@ -1,0 +1,36 @@
+{% extends 'Viajeros/base/base.html' %}
+
+
+{% load static %}
+
+{% block extra_css %}
+    <!-- <link rel="stylesheet" href="{% static 'aula_virtual/css/listar_instructores.css' %}"> -->
+{% endblock %}
+
+{% block titulo %}  {% endblock %}
+
+{% block encabezado %}
+
+{% endblock %}
+
+{% block contenido %}
+<section class="listado">
+
+    <br>
+    <h1>HOTEL ALGODON WINE STATES</h1>
+    <p><b>Servicios:</b>:
+    {% for item in listado %}
+    <article>
+         {{item.servicio}}</p>
+
+    </article>
+    {% empty %}
+    
+    {% endfor %}
+
+
+
+</section>
+<a href="{% url 'alojamiento' %}" class="btn btn-primary">Volver</a>
+<a href="{% url 'enviar_reserva_hotel' %}" class="btn btn-primary">Enviar Reserva</a>
+{% endblock %}

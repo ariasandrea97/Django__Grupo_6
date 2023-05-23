@@ -4,19 +4,28 @@
 {% block titulo %}Viajeros{% endblock %}
 
 {% block encabezado %}
+
 {% endblock %}
 
 {% block contenido %}
-<h1>Inicia Sesion</h1>
 
-
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" class="btn btn-primary" value="Login ">
+<div class="card bg-dark text-white w-50"> <!-- w-50 -->
     
-</form>
-<p>Si aun no tienes una cuenta ingresa aqui: </p> <a href="{% url 'registro' %}" > Registrar </a> 
+    <img src="{% static 'Viajeros/img/vinos.jpg'%}" class="card-img" alt="...">
+   
+    <h1 class="card-img-overlay text-center" >"Bienvenido - Inicia Tu Sesión"</h1>
+</div>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+
+        <input type="submit" class="btn btn-primary" value="Login ">
+    
+    </form>
+    <p>Si aún no tienes una cuenta ingresa aqui: </p> <a href="{% url 'registro' %}"  > Registrar </a> 
+
 
 
 {% endblock %}

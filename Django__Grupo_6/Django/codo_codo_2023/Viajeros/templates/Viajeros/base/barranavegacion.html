@@ -68,10 +68,20 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="/user" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
                     <span class="glyphicon glyphicon-user"></span> {{user.username}}</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
-                    <li><a class="dropdown-item" href="#">Consultar reservas</a></li>
-                  </ul>   
+                  
+                    {% if user.is_superuser %}
+
+                      <ul class="dropdown-menu">
+                        
+                        <li><a class="dropdown-item" href="{% url 'listar_reservas' %}">Consultar reservas</a></li>
+                      </ul>  
+                    {% else %}
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'mi_cuenta' %}">Mi cuenta</a></li>
+                        <li><a class="dropdown-item" href="{% url 'listar_reservas' %}">Consultar reservas</a></li>
+                      </ul> 
+
+                    {% endif %} 
                 </li>
                 <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
               {% else %}

@@ -14,41 +14,44 @@
 <!-- <p>Bienvenid@ <b>  {{first_name}} {{last_name}}</b></p> -->
 
 
-<div class="row">
+<div class="row row-cols-1 row-cols-md-3 g-4">
 
       <div class="col-md-4">
-          <div class="card" style="width:400px">
-            <div class="p-3 border bg-light">
-                <img class="card-img-top" src="{% static 'Viajeros/img/hotel_mendoza.jpg' %}" alt="Card image">
+          <div class="card d-inline-block " style="width:350px">
+            <div class="p-3 bg-dark warning text-white">
+                <img class="card-img-top" src="{% static 'Viajeros/img/hotel_mendoza2.jpg' %}" alt="Card image">
                 <div class="card-body">
-                  <h4 class="card-title">HOTEL MENDOZA</h4>
-                  <p class="card-text">Dirección: Av España 1210 – Mendoza, Argentina. Hotel Mendoza, se ubica en pleno centro de Mendoza, a una cuadra de la avenida Peatonal</p>
-                  <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+                  <h4 class="card-title fs-1">HOTEL MENDOZA</h4>
+                  <p class="card-text">Dirección: Av España 1210 – Mendoza, Argentina. Hotel Mendoza, se ubica en pleno centro de Mendoza, a una cuadra de la avenida Peatonal.El Hotel cuenta con jacuzzi con una espectacular vista a la Cordillera de los Andes, sauna y gimnasio, completo desayuno buffet.</p>
+                  <a href="{% url 'detalle_hotel_Mendoza' %}" class="btn btn-primary">Ver Detalle</a>
+                  <!-- <a href="{% url 'enviar_reserva_hotel' %}" class="btn btn-primary">Enviar Reserva</a> -->
                 </div>
             </div>
           </div>
       </div>
       <div class="col-md-4">
-        <div class="card" style="width:400px">
-          <div class="p-3 border bg-light">
-              <img class="card-img-top" src="{% static 'Viajeros/img/hotel_mendoza.jpg' %}" alt="Card image">
+        <div class="card d-inline-block" style="width:350px">
+          <div class="p-3 bg-dark warning text-white">
+              <img class="card-img-top" src="{% static 'Viajeros/img/Puesta_Sol2.jpg' %}" alt="Card image">
               <div class="card-body">
-                <h4 class="card-title">HOTEL MENDOZA</h4>
-                <p class="card-text">Dirección: Av España 1210 – Mendoza, Argentina. Hotel Mendoza, se ubica en pleno centro de Mendoza, a una cuadra de la avenida Peatonal</p>
-                <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+                <h4 class="card-title fs-1">PUESTA DEL SOL - SAN RAFAEL</h4>
+                <p class="card-text">Dirección: Calle 20 de Junio 715 - San Rafael – Mendoza, Argentina. Hotel Puesta del Sol , ofrece los servicios más populares son piscina, restaurante y bar/salón. </p>
+                <a href="{% url 'detalle_hotel_PuestaSol' %}" class="btn btn-primary">Ver Detalle</a>
+                <!-- <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a> -->
               </div>
           </div>
         </div>
     </div>
 
     <div class="col-md-4">
-      <div class="card" style="width:400px">
-        <div class="p-3 border bg-light">
-            <img class="card-img-top" src="{% static 'Viajeros/img/hotel_mendoza.jpg' %}" alt="Card image">
+      <div class="card d-inline-block" style="width:350px">
+        <div class="p-3 bg-dark warning text-white">
+            <img class="card-img-top" src="{% static 'Viajeros/img/algodon_wine.jpg' %}" alt="Card image">
             <div class="card-body">
-              <h4 class="card-title">HOTEL MENDOZA</h4>
-              <p class="card-text">Dirección: Av España 1210 – Mendoza, Argentina. Hotel Mendoza, se ubica en pleno centro de Mendoza, a una cuadra de la avenida Peatonal</p>
-              <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+              <h4 class="card-title fs-1">HOTEL ALGODON WINE STATES</h4>
+              <p class="card-text">Dirección: RN 144, KM 144 – San Rafael, Mendoza, Argentina.Los huéspedes pueden disfrutar de desayuno incluido, restaurante y té de cortesía durante su estadía.</p>
+              <a href="{% url 'detalle_hotel_Algodon' %}" class="btn btn-primary">Ver Detalle</a>
+              <!-- <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a> -->
             </div>
         </div>
       </div>

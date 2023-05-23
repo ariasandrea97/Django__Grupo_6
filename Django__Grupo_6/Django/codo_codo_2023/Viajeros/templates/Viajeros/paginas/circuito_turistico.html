@@ -11,12 +11,15 @@
 
 {% block contenido %}
 <h1>Circuito Turistico</h1>
+
 <h3>EXCURSIONES DESTACADAS</h3>
-<div class="row">
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
 
     <div class="col-md-4">
-        <div class="card" style="width:400px">
-            <div class="card" style="width:400px">
+        <div class="card h-100 bg-dark">
+            <div class="p-3 bg-dark warning text-white" style="width:350px">
               <img class="card-img-top" src="{% static 'Viajeros/img/Atuel_Travel.jpg' %}" alt="Card image">
               <div class="card-body">
                 <h4 class="card-title">CAÑON DEL ATUEL</h4>
@@ -26,9 +29,33 @@
             </div>
         </div>
     </div>
+
+
+    <div class="col-md-4">
+      <div class="card h-100 bg-dark">
+        <div class="p-3 bg-dark warning text-white" style="width:350px">
+            <img class="card-img-top" src="{% static 'Viajeros/img/Villavicencio.jpg' %}" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Villavicencio</h4>
+              <p class="card-text">Salidas: Jueves y Domingos. Horario: de 08.00 hs. a 13.00 hs.</p>
+              <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+            </div>
+          </div>
+      </div>
+   </div>
     
-
-
+  <div class="col-md-4">
+    <div class="card h-100 bg-dark">
+       <div class="p-3 bg-dark warning text-white" style="width:350px">
+          <img class="card-img-top" src="{% static 'Viajeros/img/bodegas_viñedos.jpg' %}" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">Bodegas y Viñedos</h4>
+            <p class="card-text">Salidas:Lunes, Miercoles y Sábados. Horario: de 14.00 hs. a 20.00 hs (horario aproximado).</p>
+            <a href="{% url 'enviar_consulta' %}" class="btn btn-primary">Enviar Reserva</a>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>
 
 

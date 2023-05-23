@@ -1,0 +1,31 @@
+{% extends 'Viajeros/base/base.html' %}
+
+
+{% load static %}
+
+{% block extra_css %}
+    <!-- <link rel="stylesheet" href="{% static 'aula_virtual/css/listar_instructores.css' %}"> -->
+{% endblock %}
+
+{% block titulo %}  {% endblock %}
+
+{% block encabezado %}
+
+{% endblock %}
+
+{% block contenido %}
+<section class="listado">
+
+
+        <article>
+
+            <p><b>Usuario:</b>: {{user.username}}</p>
+            <p><b>Nombre:</b>: {{user.first_name}}</p>
+            <p><b>Apellido:</b>: {{user.last_name}}</p>
+            <p><b>Email:</b>: {{user.email}}</p>
+
+
+        </article>
+
+        </section>
+{% endblock %}

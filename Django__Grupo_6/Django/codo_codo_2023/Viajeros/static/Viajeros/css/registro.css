@@ -1,0 +1,7 @@
+form {
+    margin: 0 auto; /* Centramos el formulario */
+    width: auto;   /* Sin ancho no podemos centrar el formulario */
+    background-color: rgb(85, 227, 252); /* Color blanco para el formulario */
+    padding: 2px; /* separamos los bordes del form del resto de elementos */
+    border-radius: 10px; /* Redondeamos los bordes del form */
+  }

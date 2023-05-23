@@ -3,15 +3,16 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound
 
 #
-from .models import Usuario
+from .models import Reservas, Servicios, Hotel, User
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
-
+from django.views.generic.list import ListView
+import datetime
 
 
 #Definicion de los formularios:
-from .forms import EnviarConsultaForm
+from .forms import EnviarReservaForm, AltaUsuarioForm, EnviarReservaHotelForm
 
 
 
@@ -63,6 +64,7 @@ def baja_persona(request):
     context={}
     return render(request, 'Viajeros/baja_persona.html', context)
 
+####################  PAGINAS ##########################################
 def nosotros(request):
     context={}
     return render(request, 'Viajeros/paginas/nosotros.html', context)
@@ -86,47 +88,33 @@ def ruta_del_vino(request):
 
 
 
-def enviar_consulta(request):
-    if request.method == "POST":
-        form = EnviarConsultaForm(request.POST)
-        if form.is_valid():
-            messages.add_message(request, messages.SUCCESS, 'Consulta enviada con exito', extra_tags="tag1")
-            context= {  }
-            return render(request, 'Viajeros/index.html', context)
 
+############   alta de un usuario      ######################
+def registro(request):     
+    if request.method == "POST":
+        alta_usuario_form = AltaUsuarioForm(request.POST)
+        if alta_usuario_form.is_valid():
+            user = alta_usuario_form.save(commit=False)
+            user.save()  #guardamos el usuario
+
+            messages.add_message(request, messages.SUCCESS, 'Usuario dado de alta con éxito', extra_tags="tag1")
+             
+            login(request,user)
+            messages.add_message(request, messages.SUCCESS, 'Ha iniciado sesion como: ' + alta_usuario_form.cleaned_data.get('username'), extra_tags="tag1")
+                              
+            return render(request, 'Viajeros/index.html')
     else:
         # GET
-        form = EnviarConsultaForm()
+        alta_usuario_form = AltaUsuarioForm()
+    
+    context = {
+        'form': alta_usuario_form
+    }
 
-    context = {'form': form}
-    return render(request, 'Viajeros/paginas/enviar_consulta.html', context)
+    return render(request, 'Viajeros/usuario/registro.html',context) 
 
 
-
-def registro(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            usuario = form.save()  #guardamos el usuario
-            # nombre_usuario = form.cleaned_data.get('username')
-            # messages.success(request, f"Nueva Cuenta creada : {nombre_usuario}")
-            messages.add_message(request, messages.SUCCESS, 'Usuario dado de alta: ' + form.cleaned_data.get('username'), extra_tags="tag1")
-
-            login(request,usuario)
-            messages.add_message(request, messages.SUCCESS, 'Ha iniciado sesion como: ' + form.cleaned_data.get('username'), extra_tags="tag1")
-            return render(request, 'Viajeros/index.html')
-        else:
-            for msg in form.error_messages:
-                messages.error(request, f"{msg}: {form.error_messages[msg]}")
-
-    form =UserCreationForm      
-    return render(request, 'Viajeros/usuario/registro.html',{"form": form}) 
-
-##
-def logout_request(request):
-    logout(request)
-    messages.info(request,"Sesion finalizada")
-    return render(request, 'Viajeros/index.html') 
+############    LOGIN / LOGOUT  #####################
 
 def login_request(request):
     if request.method == "POST":
@@ -145,8 +133,97 @@ def login_request(request):
     return render(request, 'Viajeros/usuario/login.html',{"form": form}) 
 
 ##
+def logout_request(request):
+    logout(request)
+    messages.info(request,"Sesion finalizada")
+    return render(request, 'Viajeros/index.html') 
 
-def mis_reservas(request):
 
+# class listar_reservas(ListView):
+#     model= Reservas
+#     context_object_name= 'Mis_Reservas'
+#     template_name='Viajeros/paginas/mis_reservas.html'
+#     ordering=['id']
+
+#######################  RESERVAS      ##################################
+def enviar_consulta(request):    # guarda reserva en la tabla Reservas
     context={}
+    if request.method == "POST":
+        form = EnviarReservaForm(request.POST)
+        if form.is_valid():
+            # print(request.user)
+            alta_reserva = form.save(commit=False)
+            alta_reserva.usuario= request.user
+            # alta_reserva.Tipo_reserva= "Excursion"
+            alta_reserva.save()  #guardamos la reserva
+            messages.add_message(request, messages.SUCCESS, 'Consulta enviada con exito', extra_tags="tag1")
+            return render(request, 'Viajeros/index.html', context)
+
+    else:
+        # GET
+        form = EnviarReservaForm()
+
+    context = {'form': form}
+    return render(request, 'Viajeros/paginas/enviar_consulta.html', context)
+
+#########################################################
+#@login_required
+def enviar_reserva_hotel(request):    # guarda reserva en la tabla Reservas
+    context={}
+    if request.method == "POST":
+        form = EnviarReservaHotelForm(request.POST)
+        if form.is_valid():
+            # print("form.cleaned_data[hotel]",form.cleaned_data["hotel"])
+            alta_reserva = form.save(commit=False)
+            alta_reserva.usuario= request.user
+            alta_reserva.Tipo_reserva= "Alojamiento"
+            alta_reserva.fecha_registracion= datetime.date.today()
+
+            alta_reserva.save()  #guardamos la reserva
+            messages.add_message(request, messages.SUCCESS, 'Reserva enviada con exito', extra_tags="tag1")
+            return render(request, 'Viajeros/index.html', context)
+
+    else:
+        # GET
+        form = EnviarReservaHotelForm()
+
+    context = {'form': form}
+    return render(request, 'Viajeros/paginas/enviar_reserva_hotel.html', context)
+
+#####################################################################
+def listar_reservas(request):
+    context = {}
+    listado = Reservas.objects.filter(usuario=request.user)
+    context['listado_reservas'] = listado
+
     return render(request, 'Viajeros/paginas/mis_reservas.html', context)
+
+
+def mi_cuenta(request):
+    context = {}
+    return render(request, 'Viajeros/paginas/mi_cuenta.html', context)
+
+##############  HOTELES  ##########################################
+def detalle_hotel_Algodon(request):
+    context = {}
+    servicios= Servicios.objects.filter(hotel__id=6)
+    context['listado'] = servicios
+
+    return render(request, 'Viajeros/paginas/detalle_hotel_Algodon.html', context)
+
+
+
+def detalle_hotel_PuestaSol(request):
+    context = {}
+    servicios= Servicios.objects.filter(hotel__id=5)
+    context['listado'] = servicios
+
+    return render(request, 'Viajeros/paginas/detalle_hotel_PuestaSol.html', context)
+
+
+def detalle_hotel_Mendoza(request):
+    context = {}
+    servicios= Servicios.objects.filter(hotel__id=4)
+    context['listado'] = servicios
+
+    return render(request, 'Viajeros/paginas/detalle_hotel_Mendoza.html', context)

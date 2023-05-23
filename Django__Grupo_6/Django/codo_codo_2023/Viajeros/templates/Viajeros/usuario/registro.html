@@ -1,6 +1,12 @@
 {% extends 'Viajeros/base/base.html' %}
 {% load static %}
 
+{% block extras_css%}
+   
+    <link rel="stylesheet" href="{% static 'Viajeros/css/registro.css' %}">
+
+{% endblock %}
+
 {% block titulo %}Viajeros{% endblock %}
 
 {% block encabezado %}
@@ -9,7 +15,8 @@
 {% endblock %}
 
 {% block contenido %}
-<h1>Formulario de alta</h1>
+
+<h1>Alta Nuevo Usuario - Viajeros</h1>
 
 
 <form action="{% url 'registro' %}" method="POST">

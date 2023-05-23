@@ -1,16 +1,38 @@
 {% extends 'Viajeros/base/base.html' %}
+
+
 {% load static %}
 
-{% block titulo %}Viajeros{% endblock %}
+{% block extra_css %}
+    <!-- <link rel="stylesheet" href="{% static 'aula_virtual/css/listar_instructores.css' %}"> -->
+{% endblock %}
+
+{% block titulo %}  {% endblock %}
 
 {% block encabezado %}
-
 
 {% endblock %}
 
 {% block contenido %}
-<h1>Mis reservas</h1>
-<!-- <p>Bienvenid@ <b>  {{first_name}} {{last_name}}</b></p> -->
+<section class="listado">
+    Usuario: {{user.username}}
+    <br>
+    {% for reserva in listado_reservas %}
+        <article>
+            <br>
+            <p><b>fecha de registracion:</b>: {{reserva.fecha_registracion}}</p>
+            <p><b>fecha desde:</b>: {{reserva.fecha_desde}}</p>
+            <p><b>fecha hasta:</b>: {{reserva.fecha_hasta}}</p>
+            <p><b>Adultos:</b>: {{reserva.adulto}}</p>
+            <p><b>Menores:</b>: {{reserva.menor}}</p>
+            <p><b>Tipo de reserva:</b>: {{reserva.Tipo_reserva}}</p>
+            <p><b>Hotel:</b>: {{reserva.hotel}}</p>
 
-
+        </article>
+        {% empty %}
+            <p><b>No posee reservas registradas para este usuario</b>
+        {% endfor %}
+        </section>
+        <a href="#" class="btn btn-primary">Modificar</a>
+        
 {% endblock %}

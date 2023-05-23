@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'codo_codo_2023.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'viajeros',
+        'NAME': 'Viajeros',
         'USER': 'postgres',
         'PASSWORD': 'Django1234',
         'HOST': '127.0.0.1',
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es' #'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -129,3 +129,5 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'Viajeros/static'),)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTH_USER_MODEL = 'Viajeros.Usuario'
